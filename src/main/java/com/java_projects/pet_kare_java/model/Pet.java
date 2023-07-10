@@ -2,7 +2,6 @@ package com.java_projects.pet_kare_java.model;
 
 import jakarta.persistence.*;
 import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.DynamicUpdate;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import java.util.Date;
@@ -49,20 +48,17 @@ public class Pet {
 
     }
 
-    public Pet(String name, int age, float weight, String sex, Group group) {
+    public Pet(String name, int age, float weight, String sex, Group group, Set<Trait> traits) {
         this.name = name;
         this.age = age;
         this.weight = weight;
         this.sex = sex;
         this.group = group;
+        this.traits = traits;
     }
 
     public long getId() {
         return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
     }
 
     public String getName() {
@@ -128,6 +124,7 @@ public class Pet {
     public void setUpdateAt(Date updateAt) {
         this.updateAt = updateAt;
     }
+
 
     @Override
     public String toString() {

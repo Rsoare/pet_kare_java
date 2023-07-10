@@ -31,7 +31,7 @@ public class TraitService {
         return traitRepository.findById(id).orElseThrow(() -> new AppException("Trait not found", HttpStatus.NOT_FOUND));
     }
 
-    public  Trait updateTrait(final long id, TraitDto traitData){
+    public  Trait updateTrait(TraitDto traitData, final long id){
 
         final Trait findTrait = traitRepository.findById(id).orElseThrow(() -> new AppException("Trait not found", HttpStatus.NOT_FOUND));
 
@@ -40,7 +40,7 @@ public class TraitService {
         return traitRepository.save(findTrait);
     }
 
-    public void deleteGroup(final long id){
+    public void deleteTrait(final long id){
 
         final Trait findTrait = traitRepository.findById(id).orElseThrow(() -> new AppException("Trait not found", HttpStatus.NOT_FOUND));
 

@@ -32,8 +32,8 @@ public class Trait {
         return id;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public Date getCreateAt() {
+        return createAt;
     }
 
     public String getName() {
@@ -44,21 +44,7 @@ public class Trait {
         this.name = name;
     }
 
-    public Set<Pet> getPets() {
-        return pets;
-    }
 
-    public void setPets(Set<Pet> pets) {
-        this.pets = pets;
-    }
-
-    public Date getCreateAt() {
-        return createAt;
-    }
-
-    public void setCreateAt(Date createAt) {
-        this.createAt = createAt;
-    }
 
     @Override
     public String toString() {

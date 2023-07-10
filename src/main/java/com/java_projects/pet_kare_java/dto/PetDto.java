@@ -1,9 +1,5 @@
 package com.java_projects.pet_kare_java.dto;
 
-import com.java_projects.pet_kare_java.model.Group;
-import com.java_projects.pet_kare_java.model.Trait;
-
-import java.util.Set;
 
 public class PetDto {
     private String name;
@@ -16,7 +12,7 @@ public class PetDto {
 
     private long group_id;
 
-    private long traits_id;
+    private long trait_id;
 
     
     public String getName() {
@@ -59,11 +55,11 @@ public class PetDto {
         this.group_id = group_id;
     }
 
-    public long getTraits_id() {
-        return traits_id;
+    public long getTrait_id() {
+        return trait_id;
     }
 
     public void setTraits_id(long traits_id) {
-        this.traits_id = traits_id;
+        this.trait_id = traits_id;
     }
 }
