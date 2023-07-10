@@ -21,9 +21,16 @@ public class PetService {
     }
 
     public Pet createPet(final PetDto petData){
+        final long groupId = petData.getGroup_id();
+
+         Group findGroup = null;
+
+        if(groupId > 0 ){
+            findGroup = groupRepository.findById(groupId).orElseThrow(() -> new AppException("Group not found", HttpStatus.NOT_FOUND));
+        }
 
         final Pet newPet = new Pet(petData.getName(),petData.getAge(),petData.getWeight(),
-                petData.getSex(),petData.getGroup_id(),petData.getTraits_id());
+                petData.getSex(),findGroup);
 
         return petRepository.save(newPet);
     }
@@ -39,14 +46,17 @@ public class PetService {
 
     public Pet updatePet (PetDto petData, final long id){
 
+        final long groupId = petData.getGroup_id();
+
+        final Group findGroup = groupRepository.findById(groupId).orElseThrow(() -> new AppException("Group not found", HttpStatus.NOT_FOUND));
+
         final Pet getPet = petRepository.findById(id).orElseThrow(() -> new AppException("pet not found", HttpStatus.NOT_FOUND));
 
         getPet.setName(petData.getName());
         getPet.setAge(petData.getAge());
         getPet.setSex(petData.getSex());
         getPet.setWeight(petData.getWeight());
-        getPet.setGroup(petData.getGroup_id());
-        getPet.setTraits(petData.getTraits_id());
+        getPet.setGroup(findGroup);
 
         return petRepository.save(getPet);
     }

@@ -14,10 +14,11 @@ public class PetDto {
 
     private String sex;
 
-    private Group group_id;
+    private long group_id;
 
-    private Set<Trait> traits_id;
+    private long traits_id;
 
+    
     public String getName() {
         return name;
     }
@@ -50,19 +51,19 @@ public class PetDto {
         this.sex = sex;
     }
 
-    public Group getGroup_id() {
+    public long getGroup_id() {
         return group_id;
     }
 
-    public void setGroup_id(Group group_id) {
+    public void setGroup_id(long group_id) {
         this.group_id = group_id;
     }
 
-    public Set<Trait> getTraits_id() {
+    public long getTraits_id() {
         return traits_id;
     }
 
-    public void setTraits_id(Set<Trait> traits_id) {
+    public void setTraits_id(long traits_id) {
         this.traits_id = traits_id;
     }
 }

@@ -46,15 +46,15 @@ public class Pet {
     private Date updateAt;
 
     public Pet(){
+
     }
 
-    public Pet(String name, int age, float weight, String sex, Group group, Set<Trait> traits) {
+    public Pet(String name, int age, float weight, String sex, Group group) {
         this.name = name;
         this.age = age;
         this.weight = weight;
         this.sex = sex;
         this.group = group;
-        this.traits = traits;
     }
 
     public long getId() {
